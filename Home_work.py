@@ -56,8 +56,88 @@
 #
 # 3 2 4 -> yes
 # 3 2 1 -> no
-m = int(input("Введите длину:   "))
-n = int(input("Введите ширину:   "))
-k = int(input("Введите сколько должно остаться:   "))
+# m = int(input("Введите длину:   "))
+# n = int(input("Введите ширину:   "))
+# k = int(input("Введите сколько должно остаться:   "))
+#
+# print("YES" if ((k % m == 0) or (k % n == 0)) and k < m * n else "NO")
 
-print("YES" if ((k % m == 0) or (k % n == 0)) and k < m * n else "NO")
+
+
+#--------------------------------------------------------------------------
+#HW 2
+# Задача 10: На столе лежат n монеток. Некоторые из них лежат вверх
+# решкой, а некоторые – гербом. Определите минимальное число
+# монеток, которые нужно перевернуть, чтобы все монетки были
+# повернуты вверх одной и той же стороной. Выведите минимальное
+# количество монет, которые нужно перевернуть.
+
+#1
+# coins = [int(input("enter 1(орел) or 0(решка):  ")) for i in range(int(input("enter count coins: ")))]
+# print(min(len(list(filter(lambda x: x == 0, coins))), len(list(filter(lambda x: x == 1, coins)))))
+
+#2
+# count_nul = 0
+# count_one = 0
+# count_coins = int(input("enter count coins:  "))
+# for x in range(count_coins):
+#     coin = int(input("enter 1(орел) or 0(решка):   "))
+#     if coin == 1:
+#         count_one += 1
+#     else:
+#         count_nul += 1
+# print(count_one if count_one <= count_nul else count_nul)
+
+# Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя –
+# школьница. Петя помогает Кате по математике. Он задумывает два
+# натуральных числа X и Y (X,Y≤1000), а Катя должна их отгадать. Для
+# этого Петя делает две подсказки. Он называет сумму этих чисел S и их
+# произведение P. Помогите Кате отгадать задуманные Петей числа.
+
+# s, p = int(input("enter S:  ")), int(input("enter P:  "))
+# x, y = 0, 0
+# max = s if s > p else p
+# flag = True
+# for i in range(1, max + 1):
+#     if flag == False:
+#         break
+#     for j in range(1, max + 1):
+#         if i + j == s and i * j == p:
+#             x = i
+#             y = j
+#             flag = False
+#             break
+#
+# print(f"x = {x}, y = {y}")
+
+
+# Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
+def fetch_int():
+    flag = True
+
+    while flag:
+        try:
+            res = int(input("Enter digit:  "))
+            flag = False
+        except:
+            print("error conv. Repeat! ")
+
+    return res
+#1
+#max_digit = fetch_int()
+# res = 0
+# pow = 0
+#
+# while 2 ** pow < max_digit:
+#     res = 2 ** pow
+#     pow += 1
+#     print(res, end = " ")
+
+#2
+import math
+
+# for i in range(int(math.sqrt(max_digit)) + 1):
+#     print(2 ** i, end = " ")
+
+#3
+print(*[2 ** i for i in range(int(math.sqrt(max_digit)) + 1)])
