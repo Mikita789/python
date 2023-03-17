@@ -127,5 +127,50 @@ import random
 # arr = [int(input("Введите массу арбуза:  ")) for i in range(int(input("Введите сколько будет арбузов:  ")))]
 # print(f"max = {max(arr)} and index = {arr.index(max(arr))}. min = {min(arr)} and index = {arr.index(min(arr))}")
 
-for i in range(3):
-    print(i)
+# Задача No17. Решение в группах
+# Дан список чисел. Определите, сколько в нем встречается различных чисел.
+
+
+# print(f'number of unique values:  {len(set(input("enter elements separated by spaces: ").split(" ")))}')
+
+# Задача No19. Решение в группах
+# Дана последовательность из N целых чисел и число K. Необходимо сдвинуть всю последовательность
+# (сдвиг - циклический) на K элементов вправо, K – положительное число.
+
+# arr_numbers = [int(i) for i in input("enter elements separated by spaces: ").split(" ")]
+# k = int(input('enter K number:  '))
+#1
+# for index_element in range(len(arr_numbers)):
+#     arr_numbers[index_element] += k
+# print(*arr_numbers)
+
+#2
+#print(*list(map(lambda x: x + k, arr_numbers)))
+
+#print(arr_numbers[k:] + arr_numbers[:k])
+
+
+# Задача No21. Решение в группах
+# Напишите программу для печати всех уникальных значений в словаре.
+
+# dict = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII": "S005"}, {"V":"S009"},
+#         {"VIII":"S007"}]
+# print(*set([list(d.values())[0] for d in dict]))
+
+# Задача No23. Решение в группах
+# Дан массив, состоящий из целых чисел. Напишите программу, которая подсчитает количество элементов массива,
+# больших предыдущего (элемента с предыдущим номером)
+
+# arr_numbers = [int(i) for i in input('enter elements separated by spaces: ').split(" ")]
+#1
+# count = 0
+# for index in range(1, len(arr_numbers)):
+#     if arr_numbers[index] > arr_numbers[index - 1]:
+#         count += 1
+# #2
+# print(len([arr_numbers[i] for i in range(1, len(arr_numbers)) if arr_numbers[i] > arr_numbers[i - 1]]))
+
+a = [1,2,3,4]
+print("".join(map(lambda x : str(x), a)))
+
+

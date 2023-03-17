@@ -74,7 +74,7 @@
 
 #1
 # coins = [int(input("enter 1(орел) or 0(решка):  ")) for i in range(int(input("enter count coins: ")))]
-# print(min(len(list(filter(lambda x: x == 0, coins))), len(list(filter(lambda x: x == 1, coins)))))
+# print(f"swap {min(len(list(filter(lambda x: x == 0, coins))), len(list(filter(lambda x: x == 1, coins))))} coins")
 
 #2
 # count_nul = 0
@@ -86,7 +86,7 @@
 #         count_one += 1
 #     else:
 #         count_nul += 1
-# print(count_one if count_one <= count_nul else count_nul)
+# print(f"swap {count_one if count_one <= count_nul else count_nul} coins")
 
 # Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя –
 # школьница. Петя помогает Кате по математике. Он задумывает два
@@ -112,12 +112,12 @@
 
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
-def fetch_int():
+def fetch_int(str):
     flag = True
 
     while flag:
         try:
-            res = int(input("Enter digit:  "))
+            res = int(input(str))
             flag = False
         except:
             print("error conv. Repeat! ")
@@ -140,4 +140,88 @@ import math
 #     print(2 ** i, end = " ")
 
 #3
-print(*[2 ** i for i in range(int(math.sqrt(max_digit)) + 1)])
+#print(*[2 ** i for i in range(int(math.sqrt(max_digit)) + 1)])
+
+
+#----------------------------HW3----------------------------------------------
+
+# Задача 16: Требуется вычислить, сколько раз встречается некоторое
+# число X в массиве A[1..N].
+# Пользователь в первой строке вводит
+# натуральное число N – количество элементов в массиве. В последующих
+# строках записаны N целых чисел Ai
+# . Последняя строка содержит число X
+
+# #1 and #2 ipput
+# arr = [int(input('Enter value:  ')) for i in range(int(input('Enter count elements:   ')))]
+# desired_value = int(input('Enter desired value:  '))
+
+#1
+# res = filter(lambda x : x == desired_value, arr)
+# print(len(res))
+
+#2
+# count = 0
+# for number in arr:
+#     if number == desired_value:
+#         count += 1
+# print(count)
+
+#3
+# arr = [number for number in range(int(input("Enter count elements:   "))) ]
+# desired_value = int(input('Enter desired value:  '))
+# print(len(arr) - len(("".join(map(lambda x : str(x), arr))).replace(str(desired_value), "")))
+
+
+# Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X.
+# Пользователь в первой строке вводит натуральное число N – количество элементов в массиве.
+# В последующих строках записаны N целых чисел Ai. Последняя строка содержит число X
+
+# arr = [fetch_int("enter element:  ") for i in range(fetch_int('Enter count elements:   '))]
+# x = int(input('Enter X value:  '))
+#1
+# dict = {i: abs(i - x) for i in arr}
+# print(f"{sorted(dict, key=dict.get)[0]}(index {arr.index(sorted(dict, key=dict.get)[0])})")
+
+#2
+# min = abs(arr[0] - x)
+# index_element = 0
+# for number in arr:
+#     if abs(number - x) < min:
+#         min = abs(number - x)
+#         index_element = arr.index(number)
+# print(f'Искомый элемент {arr[index_element]} c индексом {index_element}')
+
+
+
+# Задача 20: В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
+# В случае с английским алфавитом очки распределяются так:
+# ● A, E, I, O, U, L, N, S, T, R – 1 очко;
+# ● D, G – 2 очка;
+# ● B, C, M, P – 3 очка;
+# ● F, H, V, W, Y – 4 очка;
+# ● K – 5 очков;
+# ● J, X – 8 очков;
+# ● Q, Z – 10 очков.
+# А русские буквы оцениваются так:
+# ● А, В, Е, И, Н, О, Р, С, Т – 1 очко;
+# ● Д, К, Л, М, П, У – 2 очка;
+# ● Б, Г, Ё, Ь, Я – 3 очка;
+# ● Й, Ы – 4 очка;
+# ● Ж, З, Х, Ц, Ч – 5 очков;
+# ● Ш, Э, Ю – 8 очков;
+# ● Ф, Щ, Ъ – 10 очков.
+# Напишите программу, которая вычисляет стоимость введенного пользователем слова. Будем считать,
+# что на вход подается только одно слово, которое содержит либо только английские, либо только русские буквы.
+
+# user_word = input('Enter word:   ').lower()
+# #1
+# dict_values = {1: 'aeioulnstrавеинорст', 2:'dgдклмпу', 3:'bcmpбгёья', 4:'fhvwyйы', 5:'kжзхцч', 8:'шэюjx', 10:'фщъqz'}
+# total_score = 0
+# for chr in user_word:
+#     for (key, value) in dict_values.items():
+#         if chr in value:
+#             total_score += key
+#             break
+# print(total_score)
+
