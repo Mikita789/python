@@ -170,7 +170,48 @@ import random
 # #2
 # print(len([arr_numbers[i] for i in range(1, len(arr_numbers)) if arr_numbers[i] > arr_numbers[i - 1]]))
 
-a = [1,2,3,4]
-print("".join(map(lambda x : str(x), a)))
 
 
+
+
+
+
+
+
+
+#семинар 4 _______________________________________________________________________________________________
+# Задача No25. Решение в группах
+# Напишите программу, которая принимает на вход строку, и отслеживает, сколько раз каждый символ уже встречался.
+# Количество повторов добавляется к символам с помощью постфикса формата _n.
+# Input: a a a b c a a d c d d
+# Output: a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2
+
+# arr = "a a a b c a a d c d d".split(" ")
+# result_arr = []
+#
+# for index_chr in range(len(arr) - 1):
+#     count = arr[:index_chr].count(arr[index_chr])
+#     result_arr.append(f"{arr[index_chr]}_{count}" if count > 0 else f"{arr[index_chr]}")
+# print(" ".join(result_arr))
+
+# Пользователь вводит текст(строка). Словом считается последовательность непробельных символов идущих подряд, слова
+# разделены одним или большим числом пробелов. Определите, сколько различных слов содержится в этом тексте.
+# Input: She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells sea
+# shells on the sea shore I'm sure that the shells are sea shore shells
+# Output: 13
+
+
+# user_text = input('Enter text:   ')
+# print(len(set(user_text.split(" "))))
+
+subsequence = [random.randint(0, 100) for i in range(int(input('count:  ')))]
+print(subsequence)
+# max_element = 0
+# for item in subsequence:
+#     if item > max_element:
+#         max_element = item
+#     if item == 0:
+#         break
+# print(max_element)
+
+#print(max(subsequence) if (0 in subsequence) == False else max(subsequence[:subsequence.index(0)]))
