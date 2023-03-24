@@ -259,3 +259,36 @@ import math
 # # 2
 # result = [sum([arr[index], arr[index - 1], arr[(index + 1) % len(arr)]]) for index in range(len(arr))]
 # print(max(result))
+
+#----------------------------HW5----------------------------------------------
+
+# Задача 26: Напишите программу, которая на вход принимает два числа A и B, и возводит число А в
+# целую степень B с помощью рекурсии.
+
+# def degree_of_number(number, degree):
+#     if degree == 1:
+#         return number
+#     else:
+#         return number * degree_of_number(number, degree - 1)
+#
+# print(degree_of_number(2, 10))
+
+# Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел.
+# Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
+
+# def sum(a, b):
+#     res = 0
+#     if a < 2 and b < 2:
+#         return 2
+#     else:
+#         if a < 2:
+#             res = 1 + sum(0, b - 1)
+#             return res
+#         elif b < 2:
+#             res = 1 + sum(a - 1, 0)
+#             return res
+#         else:
+#             res = 1 + 1 + sum(a - 1, b - 1)
+#             return res
+# print(sum(100, 15))
+

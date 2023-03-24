@@ -204,8 +204,8 @@ import random
 # user_text = input('Enter text:   ')
 # print(len(set(user_text.split(" "))))
 
-subsequence = [random.randint(0, 100) for i in range(int(input('count:  ')))]
-print(subsequence)
+# subsequence = [random.randint(0, 100) for i in range(int(input('count:  ')))]
+# print(subsequence)
 # max_element = 0
 # for item in subsequence:
 #     if item > max_element:
@@ -215,3 +215,39 @@ print(subsequence)
 # print(max_element)
 
 #print(max(subsequence) if (0 in subsequence) == False else max(subsequence[:subsequence.index(0)]))
+
+
+def is_prime_number(number):
+    res_arr = [i for i in range(1, number + 1) if number % i == 0]
+    print(res_arr)
+    return "YES" if len(res_arr) == 2 else "NO"
+def revers_input(user_count):
+    x = input("enter number:   ")
+    if user_count != 1:
+        revers_input(user_count - 1)
+    print(x)
+
+#revers_input(int(input('enter count:  ')))
+
+
+# n = int(input('введите N-e число:   '))
+# fib = lambda n: fib(n - 1) + fib(n - 2) if n > 2 else 1
+# print(fib(n))
+
+def fib(n):
+    res = 1
+    if n < 2:
+        return 1
+    else:
+        res = fib(n - 1) + fib(n - 2)
+        return res
+
+# Хакер Василий получил доступ к классному журналу и хочет заменить все свои минимальные оценки на максимальные.
+# Напишите программу, которая заменяет оценки Василия, но наоборот: все максимальные – на минимальные.
+
+def del_all_max_value(arr):
+
+    return ", ".join([str(i) for i in arr]).replace(str(max(arr)), str(min(arr)) )
+
+arr_numbers = [int(input("enter number:   ")) for i in range(3)]
+print(del_all_max_value(arr_numbers))
