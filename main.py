@@ -249,5 +249,61 @@ def del_all_max_value(arr):
 
     return ", ".join([str(i) for i in arr]).replace(str(max(arr)), str(min(arr)) )
 
-arr_numbers = [int(input("enter number:   ")) for i in range(3)]
-print(del_all_max_value(arr_numbers))
+#arr_numbers = [int(input("enter number:   ")) for i in range(3)]
+#print(del_all_max_value(arr_numbers))
+
+#семинар 6
+#first_numbers_arr = [int(input('enter digit:   ')) for i in range(int(input('enter count first array:   ')))]
+#second_numbers_arr = [int(input('enter digit:   ')) for i in range(int(input('enter count second array:   ')))]
+
+# Задача No39. Решение в группах
+# Даны два массива чисел. Требуется вывести те элементы первого массива (в том порядке, в каком они идут в первом
+# массиве), которых нет во втором массиве. Пользователь вводит число N - количество элементов в первом массиве, затем N
+# чисел - элементы массива. Затем число M - количество элементов во втором массиве. Затем элементы второго массива
+#1
+# print(list(filter(lambda x: x not in second_numbers_arr, first_numbers_arr)))
+# #2
+# arr_res = [i for i in first_numbers_arr if i not in second_numbers_arr]
+
+
+# Дан массив, состоящий из целых чисел. Напишите программу, которая в данном массиве определит количество элементов,
+# у которых два соседних и, при этом, оба соседних элемента меньше данного. Сначала вводится число N — количество
+# элементов в массиве Далее записаны N чисел — элементы массива. Массив состоит из целых чисел.
+
+
+# user_array = [int(input('enter digit:   ')) for i in range(int(input('enter count:    ')))]
+# def not_name(arr):
+#     count_el = 0
+#     for index in range(1, len(arr) - 1):
+#         if arr[index] > arr[index - 1] and arr[index] > arr[index + 1]:
+#             count_el += 1
+#     return count_el
+#
+#
+# print(not_name(user_array))
+
+# Задача No43. Решение в группах
+# Дан список чисел. Посчитайте, сколько в нем пар элементов, равных друг другу. Считается, что любые два элемента,
+# равные друг другу образуют одну пару, которую необходимо посчитать. Вводится список чисел. Все числа списка находятся
+# на разных строках.
+#
+# arr = [1, 2, 3, 2, 5, 1]
+# print(len(arr) - len(set(arr)) if ((len(arr) - len(set(arr))) % 2) == 0 else len(arr) - len(set(arr)) - 1)
+
+
+# Задача No45. Решение в группах
+# Два различных натуральных числа n и m называются дружественными, если сумма делителей числа n (включая 1, но исключая
+# само n) равна числу m и наоборот. Например, 220 и 284 – дружественные числа. По данному числу k выведите все пары
+# дружественных чисел, каждое из которых не превосходит k. Программа получает на вход одно натуральное число k,
+# не превосходящее 105. Программа должна вывести все пары дружественных чисел, каждое из которых не превосходит k.
+# Пары необходимо выводить по одной в строке, разделяя пробелами. Каждая пара должна быть выведена только
+# один раз (перестановка чисел новую пару не дает).
+
+# number = int(input('enter digit:   '))
+# for num1 in range(1, number):
+#     arr_del_1 = [i for i in range(1, num1) if num1 % i == 0]
+#     for num2 in range(num1, number):
+#         arr_del_2 = [i for i in range(1, num2) if num2 % i == 0]
+#         if sum(arr_del_1) == num2 and sum(arr_del_2) == num1:
+#             print(num1, num2, sep= " ", end= "||")
+
