@@ -313,3 +313,32 @@ import math
 # range_filter = [1, 19]
 # res = [user_arr.index(i) for i in user_arr if i >= range_filter[0] and i <= range_filter[1]]
 # print(res)
+
+
+
+
+
+
+
+#----------------------------HW7----------------------------------------------
+
+#34
+
+# def is_rhyme(text):
+#     gl = 'аоиыуэ'
+#     count_gl = list(map(lambda x : sum([1 for chr in x if chr in gl]), text.split()))
+#     return "Парам пам-пам" if all([x == count_gl[0] for x in count_gl]) == True else "Пам парам"
+# print(is_rhyme("пара-ра-рам рам-пам-папам па-ра-па-дам"))
+
+#36
+# def print_operation_table(operation, num_rows=6, num_columns=6):
+#     for i in range(1, num_rows + 1):
+#         print()
+#         for j in range(1, num_columns + 1):
+#             print(operation(i, j), end='\t')
+#
+#
+# print_operation_table(lambda x, y: x * y)
+
+
+

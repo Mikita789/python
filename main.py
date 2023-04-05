@@ -306,4 +306,30 @@ def del_all_max_value(arr):
 #         arr_del_2 = [i for i in range(1, num2) if num2 % i == 0]
 #         if sum(arr_del_1) == num2 and sum(arr_del_2) == num1:
 #             print(num1, num2, sep= " ", end= "||")
+# arr = [1, 2, 3, 5, 8, 15, 23, 38]
+# res = [(i, i**2) for i in arr if i % 2 == 0]
+# print(res)
 
+#задача 49
+
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+# import math
+# # find_farthest_orbit = lambda x : math.pi * x[0] * x[1]
+# # orb = [find_farthest_orbit(i) for i in orbits]
+# # print(orbits[orb.index(max(orb))])
+# res = list(map(lambda x: (x[0], x[1], math.pi * x[0] * x[1]), orbits))
+# res.sort(key= lambda x: x[2])
+# print(res[len(res) - 1])
+
+#51
+
+
+# def same_by(characteristic, objects):
+#     res = []
+#     for item in objects:
+#         if characteristic(item) == True:
+#             res.append(item)
+#     print("same") if len(res) == len(objects) else print("different")
+#
+# values  = [0, 2, 10, 6]
+# same_by(lambda x : x % 2 != 0, values)
