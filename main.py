@@ -333,3 +333,73 @@ def del_all_max_value(arr):
 #
 # values  = [0, 2, 10, 6]
 # same_by(lambda x : x % 2 != 0, values)
+
+# with open('tele.txt', 'w') as file:
+#     file.write("FIO")
+#     for i in range(5):
+#         file.write(f"FIO{i}\n")
+
+class Telephone_Book:
+    def __init__(self, name_file):
+        self.name_file = name_file
+    def read_file(self):
+        with open(self.name_file, 'r') as file:
+            for line in file.readlines():
+                print(line.strip())
+    def add_contact(self):
+        first_name = input("Enter first name:   ")
+        sec_name = input("Enter sec name:   ")
+        tel = input("Enter tel. number:   ")
+
+        with open(self.name_file, 'a+') as file:
+            file.writelines([f"\n{first_name} {sec_name} {tel}"])
+
+    def search_contact(self):
+        text = input("Enter search query:   ")
+        flag = True
+        with open(self.name_file, 'r') as file:
+            for line in file:
+                if text.lower() in line.lower():
+                    print(line)
+                    flag = False
+            if flag == True:
+                print("Sorry, couldn't find a contact")
+    def delete_contact(self):
+        text_contact = input("Enter delete query:   ")
+        with open(self.name_file, 'r') as file:
+            lines = [line for line in file if text_contact.lower() not in line.lower()]
+            print(*lines)
+        with open(self.name_file, 'w') as file:
+            file.writelines(lines)
+
+    def edit_contact(self):
+        with open(self.name_file, 'r') as file:
+            text = input("Enter search query:   ")
+            lines = []
+            flag = True
+            for line in file:
+                if text.lower() in line.lower():
+                    print(line)
+                    refact_str = input("Enter new information:  ")
+                    flag = False
+                    lines.append(refact_str + "\n")
+                else:
+                    lines.append(line)
+
+            if flag:
+                print("Sorry, couldn't find a contact")
+
+        with open(self.name_file, 'w') as file:
+            file.writelines(lines)
+
+
+tele_book = Telephone_Book("tele.txt")
+tele_book.add_contact()
+
+
+
+
+
+
+
+
